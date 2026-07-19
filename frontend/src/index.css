@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-base-950 text-slate-100 font-body antialiased;
+  background-image: radial-gradient(circle at 50% -10%, rgba(56, 189, 248, 0.10), transparent 55%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display tracking-wide;
+}
+
+/* Reusable component classes */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-volt-600 to-volt-500
+    px-6 py-3 font-display font-semibold uppercase tracking-wider text-base-950 shadow-volt
+    transition-transform duration-200 hover:scale-[1.03] hover:shadow-[0_0_35px_-4px_rgba(56,189,248,0.7)]
+    disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:scale-100;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-volt-500/50
+    px-6 py-3 font-display font-semibold uppercase tracking-wider text-volt-400
+    transition-colors duration-200 hover:bg-volt-500/10;
+  }
+
+  .card {
+    @apply rounded-xl border border-base-700/60 bg-base-800/80 backdrop-blur;
+  }
+
+  .input-field {
+    @apply w-full rounded-md border border-base-700 bg-base-900 px-4 py-2.5 text-sm text-slate-100
+    placeholder:text-slate-500 outline-none transition-colors focus:border-volt-500 focus:ring-1 focus:ring-volt-500;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400;
+  }
+
+  .eyebrow {
+    @apply font-display text-xs font-semibold uppercase tracking-[0.3em] text-volt-400;
+  }
+
+  .stat-divider {
+    @apply border-l border-base-700;
+  }
+}
+
+/* Angled "speed" clip used on hero/feature panels */
+.clip-angled {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 4% 100%);
+}
+
+/* Thin racing-stripe accent */
+.stripe-accent {
+  background: linear-gradient(90deg, transparent, #38BDF8 20%, #5EEAD4 50%, #38BDF8 80%, transparent);
+  height: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #04060C;
+}
+::-webkit-scrollbar-thumb {
+  background: #182242;
+  border-radius: 8px;
+}
