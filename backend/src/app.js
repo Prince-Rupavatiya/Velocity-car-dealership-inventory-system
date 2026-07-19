@@ -16,6 +16,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
   "https://velocity-car-dealership-inventory-s.vercel.app",
+  "https://velocity-7aeb.onrender.com",
   process.env.CLIENT_URL,
 ].filter(Boolean);
 
