@@ -47,7 +47,9 @@ export default function Register() {
       toast.success('Account created successfully!');
       navigate(user.role === 'admin' ? '/admin' : '/dashboard');
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Registration failed');
+      console.error('Register error:', err);
+      const message = err.response?.data?.message || err.message || 'Registration failed';
+      toast.error(message);
     } finally {
       setLoading(false);
     }

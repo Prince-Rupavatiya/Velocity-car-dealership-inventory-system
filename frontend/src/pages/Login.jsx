@@ -20,7 +20,9 @@ export default function Login() {
       toast.success(`Welcome back, ${user.name.split(' ')[0]}!`);
       navigate(user.role === 'admin' ? '/admin' : '/dashboard');
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Login failed. Check your credentials.');
+      console.error('Login error:', err);
+      const message = err.response?.data?.message || err.message || 'Login failed. Check your credentials.';
+      toast.error(message);
     } finally {
       setLoading(false);
     }
